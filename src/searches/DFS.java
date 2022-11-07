@@ -21,6 +21,7 @@ public class DFS{
 		goal = goalPoint;
 		current = startPoint;
 		maze.markPath(current);
+		
 		// The data structure for DFS is a stack.
 		Stack<Point> stack =new Stack<>();
 		stack.push(startPoint);
@@ -30,9 +31,11 @@ public class DFS{
 	/*
 	 * Depth-First Search Algorithm.
 	 */
-	public boolean step(){
+	public boolean step()
+	{
 		// Don't keep computing after goal is reached or determined impossible.
-		if(searchOver){
+		if(searchOver)
+		{
 			return searchResult;
 		}
 		// Find possible next steps
@@ -40,12 +43,14 @@ public class DFS{
 		// Choose one to be a part of the path
 		Point next = chooseNeighbor(neighbors);
 		// mark the next step
-		if(next!=null){
+		if(next!=null)
+		{
 			maze.markPath(next);
 			recordLink(next);
 		}
 		// if no next step is found
-		else{	
+		else
+		{	
 			maze.markVisited(current);
 			Stack<Point> stack = (Stack<Point>)data;
 			stack.pop();

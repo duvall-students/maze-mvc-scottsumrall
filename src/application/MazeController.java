@@ -41,7 +41,8 @@ public class MazeController
 		this.mazeDisplay = mazeDisplay;
 	}
 	
-	public void startSearch(String searchType) {
+	public void startSearch(String searchType) 
+	{
 		maze.reColorMaze();
 		search = searchType;
 		

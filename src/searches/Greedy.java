@@ -29,6 +29,7 @@ public class Greedy{
 		goal = goalPoint;
 		current = startPoint;
 		maze.markPath(current);
+		
 		childParent = new HashMap<>();
 		// For a greedy searcher, we will use a priority queue
 		// based on the number of steps away from the goal.		
@@ -39,9 +40,11 @@ public class Greedy{
 	/*
 	 * Algorithm for Greedy Search
 	 */
-	public boolean step(){
+	public boolean step()
+	{
 		// Don't keep computing after goal is reached or determined impossible.
-		if(searchOver){
+		if(searchOver)
+		{
 			colorPath();
 			return searchResult;
 		}
@@ -50,13 +53,15 @@ public class Greedy{
 		// Choose one to be a part of the path
 		Point next = chooseNeighbor(neighbors);
 		// mark the next step
-		if(next!=null){
+		if(next!=null)
+		{
 			maze.markPath(next);
 			recordLink(next);
 		}
 		// if no next step is found, mark current 
 		// state "visited" and take off queue.
-		else{	
+		else
+		{	
 			maze.markVisited(current);
 			PriorityQueue<Point> queue = (PriorityQueue<Point>) data;
 			queue.remove();

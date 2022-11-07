@@ -36,9 +36,11 @@ public class Magic {
 		/*
 		 * Algorithm for Greedy Search
 		 */
-		public boolean step(){
+		public boolean step()
+		{
 			// Don't keep computing after goal is reached or determined impossible.
-			if(searchOver){
+			if(searchOver)
+			{
 				colorPath();
 				return searchResult;
 			}

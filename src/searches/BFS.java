@@ -28,6 +28,7 @@ public class BFS{
 		goal = goalPoint;
 		current = startPoint;
 		maze.markPath(current);
+		
 		data = new LinkedList<>();
 		data.add(startPoint);
 		childParent = new HashMap<>();
@@ -36,9 +37,11 @@ public class BFS{
 	/*
 	 * Algorithm for Breadth-First Search
 	 */
-	public boolean step(){
+	public boolean step()
+	{
 		// Don't keep computing after goal is reached or determined impossible.
-		if(searchOver){
+		if(searchOver)
+		{
 			colorPath();
 			return searchResult;
 		}
@@ -47,13 +50,15 @@ public class BFS{
 		// Choose one to be a part of the path
 		Point next = chooseNeighbor(neighbors);
 		// mark the next step
-		if(next!=null){
+		if(next!=null)
+		{
 			maze.markPath(next);
 			recordLink(next);
 		}
 		// if no next step is found, mark current 
 		// state "visited" and take off queue.
-		else{	
+		else
+		{	
 			maze.markVisited(current);
 			Queue<Point> queue = (Queue<Point>) data;
 			queue.remove();

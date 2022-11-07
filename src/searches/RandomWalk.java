@@ -25,6 +25,7 @@ public class RandomWalk{
 		goal = goalPoint;
 		current = startPoint;
 		maze.markPath(current);
+		
 		next = startPoint;
 		rand = new Random();
 	}
