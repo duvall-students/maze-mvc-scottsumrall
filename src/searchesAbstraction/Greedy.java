@@ -31,7 +31,7 @@ public class Greedy extends BFS
 		
 	}
 
-	private int distanceToGoal(Point p){
+	protected int distanceToGoal(Point p){
 		return goal.x-p.x + goal.y-p.y;
 	}
 
@@ -55,7 +55,7 @@ public class Greedy extends BFS
 	/*
 	 * Of all the neighbors, choose one with the smallest distance to goal.
 	 */
-	private Point closestToGoal(Collection<Point> neighbors){
+	protected Point closestToGoal(Collection<Point> neighbors){
 		int smallestDistance = Integer.MAX_VALUE;
 		Point next = null;
 		for(Point p: neighbors){
