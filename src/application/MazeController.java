@@ -50,8 +50,8 @@ public class MazeController
 		if(search.equals("DFS")) this.search = new DFS(maze, start, goal);
 		else if (search.equals("BFS")) this.search = new BFS(maze, start, goal);
 		else if (search.equals("RandomWalk"))this.search = new RandomWalk(maze, start, goal);
+		else if (search.equals("Greedy")) this.search = new Greedy(maze, start, goal);
 		/*
-		else if (search.equals("RandomWalk")) rand.step();
 		else if (search.equals("Magic")) magic.step();
 		*/
 		
