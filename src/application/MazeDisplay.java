@@ -212,6 +212,8 @@ public class MazeDisplay extends Application {
 	 * method assumes the display maze matches the model maze
 	 */
 	public void redraw(){
+		//move iteration logic to controller
+		//reduce this method to a single 
 		for(int i = 0; i< mirrorMaze.length; i++){
 			for(int j =0; j < mirrorMaze[i].length; j++){
 				mirrorMaze[i][j].setFill(color[mazeController.getCellState(new Point(i,j))]);
