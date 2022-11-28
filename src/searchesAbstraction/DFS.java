@@ -8,7 +8,7 @@ import java.util.Stack;
 
 import application.Maze;
 
-public class DFS extends MazeSearch
+public class DFS extends SearchAlgorithm
 {
 	
 	public DFS(Maze mazeBlocks, Point startPoint, Point goalPoint){

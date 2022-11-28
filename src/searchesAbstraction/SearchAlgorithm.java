@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 import application.Maze;
 
-public abstract class MazeSearch 
+public abstract class SearchAlgorithm 
 {
 	protected Maze maze;					// The maze being solved
 	protected Point goal;	
@@ -17,7 +17,7 @@ public abstract class MazeSearch
 	protected boolean searchOver = false;
 	protected boolean searchResult = false;
 	
-	public MazeSearch(Maze mazeBlocks, Point startPoint, Point goalPoint)
+	public SearchAlgorithm(Maze mazeBlocks, Point startPoint, Point goalPoint)
 	{
 		maze = mazeBlocks;
 		goal = goalPoint;
