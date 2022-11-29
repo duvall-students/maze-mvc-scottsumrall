@@ -1,4 +1,4 @@
-package searchesAbstraction;
+package searches;
 
 import java.awt.Point;
 import java.util.ArrayList;

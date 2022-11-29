@@ -2,8 +2,7 @@ package application;
 
 import java.awt.Point;
 
-
-import searchesAbstraction.*;
+import searches.*;
 public class MazeController 
 {
 	/* 
@@ -42,22 +41,7 @@ public class MazeController
 	public void startSearch(String search) 
 	{
 		maze.reColorMaze();
-
-		
-		// Restart the search.  Since I don't know 
-		// which one, I'll restart all of them.
-		
-		if(search.equals("DFS")) this.search = new DFS(maze, start, goal);
-		else if (search.equals("BFS")) this.search = new BFS(maze, start, goal);
-		else if (search.equals("RandomWalk"))this.search = new RandomWalk(maze, start, goal);
-		else if (search.equals("Greedy")) this.search = new Greedy(maze, start, goal);
-		else if (search.equals("Magic")) this.search = new Magic(maze, start, goal);
-		
-			// start in upper left and end in lower right corner
-		
-		//search = new Greedy(maze, start, goal);
-		
-		//search = new Magic(maze, start, goal);
+		this.search = SearchFactory.makeSearch(search, maze, start, goal);
 	}
 	
 	/*
